@@ -38,7 +38,10 @@ public class InterfazGrafica {
                     interfazCuentas();
                     break;
                 case "3":
-                    realizarOperacion(operaciones.elegirCuenta());
+                    Cuenta cuenta = operaciones.elegirCuenta();
+                    if( cuenta != null){
+                        realizarOperacion(cuenta);
+                    }
                     break;
                 case "0":
                     System.out.println("Gracias por utilizar el sistema bancario");   
@@ -119,6 +122,7 @@ public class InterfazGrafica {
 
 
 public void realizarOperacion(Cuenta cuenta) {
+
     boolean salir = false;
     
     while (!salir) {
